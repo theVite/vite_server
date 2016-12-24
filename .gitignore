@@ -1,7 +1,13 @@
+# Gradle
 build/
 .gradle
 
+# Emacs
 *~
+
+# Intellij
+.idea
+*.iml
 
 *.class
 
@@ -9,7 +15,7 @@ build/
 .mtj.tmp/
 
 # Package Files #
-*.jar
+# *.jar
 *.war
 *.ear
 
