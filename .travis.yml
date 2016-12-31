@@ -10,10 +10,8 @@ services:
 before_script:
   - echo "User"
   - echo $DOCKER_USERNAME
-  - echo DOCKER_USERNAME
   - echo "Pass"
   - echo $DOCKER_PASSWORD
-  - echo DOCKER_PASSWORD
 
 script:
   - ./docker/dockerize.sh
