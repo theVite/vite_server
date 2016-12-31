@@ -7,12 +7,9 @@ jdk:
 services:
   - docker
 
+script:
+  - ./docker/dockerize.sh
 
 after_success:
   - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
-  - export REPO=thevite/vite_server
-  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
-  - docker build -f docker/Dockerfile -t $REPO:$COMMIT .
-  - docker tag $REPO:$COMMIT $REPO:$TAG
-  - docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
-  - docker push $REPO
+  - docker push vite-server/test
