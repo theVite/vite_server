@@ -6,3 +6,10 @@ jdk:
 
 services:
   - docker
+
+script:
+  - ./docker/dockerize.sh
+
+after_success:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push thevite/vite-server
