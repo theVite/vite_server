@@ -13,4 +13,4 @@ script:
 after_success:
   - docker images
   - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
-  - docker push vite-server/test
+  - docker push vite-server:test
