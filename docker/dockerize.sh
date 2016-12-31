@@ -1,8 +1,11 @@
 set -ex
 
-NAME=thevite/vite_server
+# Docker Variables
+NAME=vite_server
+USER=thevite
+DOCKER_NAME="${USER}/${NAME}"
 TAG=${1:-latest}
 
-mv build/libs/vite-server-*.jar docker/vite-server.jar
-docker build docker/ -t "${NAME}:${TAG}"
-rm docker/vite-server.jar
+mv "build/libs/${NAME}-*.jar" "docker/${NAME}.jar"
+docker build docker/ -t "${DOCKER_NAME}:${TAG}"
+rm "docker/${NAME}.jar"
