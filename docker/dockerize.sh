@@ -1,7 +1,7 @@
 set -ex
 
-NAME=vite-server
-TAG=${1:-test}
+NAME=thevite/vite_server
+TAG=${1:-latest}
 
 #./gradlew build
 mv build/libs/$NAME-*.jar docker/$NAME.jar
