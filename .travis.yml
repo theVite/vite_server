@@ -11,5 +11,5 @@ script:
   - ./docker/dockerize.sh
 
 after_success:
-  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker login -username $DOCKER_USERNAME -password $DOCKER_PASSWORD
   - docker push thevite/vite_server
