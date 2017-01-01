@@ -15,7 +15,7 @@ build/
 .mtj.tmp/
 
 # Package Files #
-# *.jar
+vite_server*.jar
 *.war
 *.ear
 
