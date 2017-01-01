@@ -1,7 +1,5 @@
 package models;
 
-import java.util.Optional;
-
 public class StringData {
     private String value;
     private String author = "anonymous";
