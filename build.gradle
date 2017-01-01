@@ -1,3 +1,8 @@
+/*
+=========================================================
+Buildscript
+=========================================================
+*/
 buildscript {
     repositories {
         mavenCentral()
@@ -7,13 +12,90 @@ buildscript {
     }
 }
 
+
+/*
+=========================================================
+Apply plugins
+=========================================================
+*/
 apply plugin: 'java'
+apply plugin: 'maven'
 apply plugin: 'org.springframework.boot'
 
-jar {
-    baseName = 'vite_server'
-    version = '0.1.0'
+/*
+=========================================================
+  Create self contained jar
+=========================================================
+*/
+
+def artifactName = 'vite_server'
+
+springBoot {
+    mainClass = "com.vite.Application"
 }
+
+bootRun {
+/*
+ * Support testing directly via gradle.
+ *
+ * Example:
+ *  $ gradle bootRun -Pargs="-d mem -t gui"
+ */
+    if (project.hasProperty('args')) {
+        args project.args.split('\\s+')
+    }
+}
+
+task generatePom << {
+    pom {
+        project {
+            artifactId = artifactName
+            name = artifactName
+        }
+    }.writeTo("$buildDir/tmp/maven/pom.xml")
+}
+
+jar {
+    baseName = artifactName
+    manifest {
+        attributes(
+                "Implementation-Title": baseName,
+                "Implementation-Version": version,
+        )
+    }
+    into("META-INF/maven/$project.group/$baseName") {
+        from "$buildDir/tmp/maven/"
+    }
+}
+
+jar.dependsOn generatePom
+
+/*
+=========================================================
+    Javadocs Generation
+=========================================================
+*/
+task docs(type: Javadoc) {
+    source = sourceSets.main.allJava
+    destinationDir = file("$project.buildDir/javadocs")
+    failOnError = false
+}
+
+task docBundle(type: Tar) {
+    baseName = artifactName
+    version = project.version
+    extension = "tar.gz"
+    classifier = "javadoc"
+    destinationDir = file("$buildDir/")
+    from(project.files("$buildDir/javadocs"))
+}
+docBundle.dependsOn docs
+
+/*
+=========================================================
+   Load Dependencies
+=========================================================
+*/
 
 repositories {
     mavenCentral()
@@ -23,5 +105,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
+    compile(group: 'org.springframework.boot', name: 'spring-boot-starter-web')
+    compile(group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.7')
+    compile(group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.7')
 }
