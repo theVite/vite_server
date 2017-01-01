@@ -1,6 +1,6 @@
 # AlpineLinux with a glibc-2.21 and Oracle Java 8
 
-FROM anapsix/docker-alpine-java
+FROM anapsix/alpine-java
 
 # Set up vite jar
 RUN mkdir /app
