@@ -1,0 +1,11 @@
+logging:
+  level:
+    ROOT: 'info'
+    jndi: 'warn'
+    org.eclipse.jetty: 'warn'
+    org.jose4j: 'warn'
+    org.springframework: 'warn'
+
+spring:
+  main:
+    banner-mode: 'off'

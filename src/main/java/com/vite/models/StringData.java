@@ -1,4 +1,4 @@
-package models;
+package com.vite.models;
 
 public class StringData {
     private String value;
