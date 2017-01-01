@@ -13,7 +13,7 @@ public class Application {
     static final Logger LOGGER = Logger.getLogger(Application.class);
 
     public static void main(String[] args) {
-        LOGGER.debug("Starting server...");
         SpringApplication.run(Application.class, args);
+        LOGGER.info("Starting server...");
     }
 }
