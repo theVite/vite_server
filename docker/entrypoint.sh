@@ -1,4 +1,4 @@
 #!/bin/sh
 
-NAME=vite-server
+NAME=vite_server
 java -jar app/$NAME.jar

@@ -1,9 +1,11 @@
 set -ex
 
-NAME=vite-server
-TAG=${1:-test}
+# Docker Variables
+NAME=vite_server
+USER=thevite
+DOCKER_NAME="${USER}/${NAME}"
+TAG=${1:-latest}
 
-./gradlew build
-mv build/libs/$NAME-*.jar docker/$NAME.jar
-docker build docker/ -t "${NAME}:${TAG}"
-rm docker/$NAME.jar
+cp build/libs/${NAME}-*.jar docker/${NAME}.jar
+docker build docker/ -t ${DOCKER_NAME}:${TAG}
+rm docker/${NAME}.jar

@@ -6,3 +6,9 @@ jdk:
 
 services:
   - docker
+
+after_success:
+  - ./docker/dockerize.sh
+  - docker images
+  - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+  - docker push thevite/vite_server:latest

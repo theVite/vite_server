@@ -1,7 +1,10 @@
-FROM openjdk:8
+# AlpineLinux with a glibc-2.21 and Oracle Java 8
 
+FROM anapsix/alpine-java
+
+# Set up vite jar
 RUN mkdir /app
-ADD vite-server.jar /app
+ADD vite_server.jar /app
 ADD entrypoint.sh /
 RUN chmod +x entrypoint.sh
 
