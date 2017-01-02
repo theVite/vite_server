@@ -1,0 +1,51 @@
+:authenticated:
+
+- list all groups
+  -> success
+     + list of user's active group ids
+
+- get all groups
+  -> success
+     + list of user's active groups
+
+- get group
+  + list of group ids
+
+  -> success
+     + list of group data
+
+- create group
+  + group name
+  ? group data
+
+  -> success
+     + group id
+  -> fail
+
+- update group
+  + group id
+  + group data
+
+- send group join request
+  + user
+  + group
+
+  -> success
+  -> fail
+
+- accept group join request
+  + group join request
+
+  -> success
+  -> fail
+
+- reject group join request
+  + group join request
+
+  -> success
+  -> fail
+
+- list of group join requests
+  -> success
+     + list of active group join requests
+     

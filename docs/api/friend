@@ -1,0 +1,43 @@
+:authenticated:
+
+- send friend request
+  + user
+
+  -> success
+  -> fail
+
+- list friend requests
+  ? only new
+
+  -> success
+     + list of active friend requests
+  -> fail
+
+- accept friend request
+  + friend request
+
+  -> success
+  -> fail
+
+- reject friend request
+  + friend request
+
+  -> success
+  -> fail
+
+- list friends
+  -> success
+     + list of friend ids
+
+- get friends
+  + list of friend ids
+
+  -> success
+     + list of friend data
+
+- remove friend
+   + user
+
+   -> success
+   -> fail
+

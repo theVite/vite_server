@@ -1,0 +1,76 @@
+:authenticate:
+
+- add event
+  + event data
+
+  -> success
+     + event id
+     + version
+  -> fail
+
+- remove event
+  + event id
+
+  -> success
+     + version
+  -> fail
+
+- update event
+  + event id
+  + event data
+
+  -> success
+     + version
+  -> fail
+
+- list events for days
+  + list of days
+
+  -> success
+     + list of list of all event ids on days
+  -> fail
+
+- list all events
+  -> success
+     + list of all event ids
+  -> fail
+
+- get events
+  + list of ids
+
+  -> success
+     + list of all event data for event ids
+  -> fail
+
+- get events for days
+  + list of days
+  -> success
+     + list of list of all event data on days
+  -> fail
+
+- get all events
+  -> success
+     + list of all event data
+
+- get all event changes
+  + version
+
+  -> success
+     + list of all event changes
+
+- get day of all event changes
+  + version
+
+  -> success
+     + list of days for all event changes
+
+- apply event changes
+  + schedule version
+  + list of event changes
+
+  -> success
+     + version
+
+- get schedule version
+  -> success
+     + version

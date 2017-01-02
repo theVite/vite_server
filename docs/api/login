@@ -1,0 +1,16 @@
+- register
+  + username
+  + password
+  ???... [extra user data]
+
+  -> success
+     + auth token
+  -> fail
+
+- login
+  + username
+  + password
+
+  -> success
+     + auth token
+  -> fail
