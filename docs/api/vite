@@ -1,0 +1,95 @@
+:authenticated:
+
+- create vite
+  ? list of users
+  ? list of groups
+  + vite data
+
+  -> success
+     + vite id
+  -> fail
+
+- list all vites
+  -> success
+     + list of active vite ids
+
+- get all vites
+  -> success
+     + list of active vites
+
+- get vites
+  + list of vite ids
+  
+  -> success
+     + list of vites for given vite ids
+
+- update vite
+  + vite id
+  + vite data
+
+  -> success
+  -> fail
+
+- add vite users
+  + vite id
+  + list of users
+
+  -> success
+  -> fail
+
+- remove vite user
+  + vite id
+  + list of users
+
+  -> success
+  -> fail
+
+- add vite groups
+  + vite id
+  + list of groups
+
+  -> success
+  -> fail
+
+- remove vite group
+  + vite id
+  + list of groups
+
+  -> success
+  -> fail
+
+- accept vite
+  + vite id
+
+  -> success
+  -> fail
+
+- decline vite
+  + vite id
+  
+  -> success
+  -> fail
+
+- send vite message
+  + vite id
+  + message
+
+  -> success
+  -> fail
+
+- get vite update version
+  -> success
+     + update version 
+
+- get all vite updates
+  + vite id
+
+  -> success
+     + list of all vite updates
+
+- get all vite updates after version
+  + vite id
+  + vite update version
+
+  -> success
+     + list of vite updates after update version
