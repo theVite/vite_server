@@ -1,0 +1,12 @@
+logging:
+  level:
+    ROOT: 'debug'
+    com.vite: 'debug'
+    jndi: 'warn'
+    org.eclipse.jetty: 'warn'
+    org.jose4j: 'warn'
+    org.springframework: 'warn'
+
+spring:
+  main:
+    banner-mode: 'off'

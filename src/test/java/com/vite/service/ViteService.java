@@ -1,7 +1,13 @@
 package com.vite.service;
 
-/**
- * Created by sagesmith on 1/13/17.
- */
 public class ViteService {
+    /**
+     * Tests the {@link ViteService#ping()} function
+     */
+    @Test
+    public void testPing() {
+        Service viteService = new ViteService();
+        viteService.ping();
+        assertThat(buffer, is(equalTo("ping")));
+    }
 }

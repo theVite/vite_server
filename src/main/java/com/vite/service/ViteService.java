@@ -1,4 +1,8 @@
-package service;
+package com.vite.service;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 /**
  * Class that holds the implementation of the Service interface
