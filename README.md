@@ -25,4 +25,6 @@ This section details information on contributing quality code to the repo
 - All code must be submitted to code review by making a PR to the [vite_server repo](https://github.com:theVite/vite_server.git)
 - All code must be pass quality assurance passes in order to be merged
 
-## Liscense
+## License
+
+You can view the [liscense](LICENSE)
