@@ -19,6 +19,7 @@ Apply plugins
 */
 apply plugin: 'java'
 apply plugin: 'maven'
+//apply plugin: 'maven-publish'
 apply plugin: 'org.springframework.boot'
 
 /*
@@ -26,9 +27,6 @@ apply plugin: 'org.springframework.boot'
 Repo Info
 =========================================================
 */
-sourceCompatability = 1.8
-targetCompatability = 1.8
-
 group = 'com.vite'
 description = "Vite backend server"
 
@@ -110,12 +108,14 @@ docBundle.dependsOn docs
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
     compile(group: 'org.springframework.boot', name: 'spring-boot-starter-web')
     compile(group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.7')
     compile(group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.7')
+    compile(group: 'com.vite', name: 'vite-server-api', version: '0.0.0-SNAPSHOT')
 
     testCompile(group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3')
     testCompile(group: 'org.hamcrest', name: 'hamcrest-library', version: '1.3')
