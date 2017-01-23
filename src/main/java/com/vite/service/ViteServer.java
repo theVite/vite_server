@@ -10,6 +10,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * Server created using thrift
+ * TODO use secure version
+ */
 @Component
 public class ViteServer {
     private static final Logger LOGGER = LoggerFactory.getLogger(ViteHandler.class);

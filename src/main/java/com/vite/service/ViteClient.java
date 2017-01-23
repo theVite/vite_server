@@ -10,6 +10,12 @@ import org.slf4j.LoggerFactory;
 
 import javax.annotation.PreDestroy;
 
+/**
+ * Simple client for proof of concept.
+ * TODO define interface
+ * TODO break out into own repo
+ * TODO use secure client
+ */
 public class ViteClient {
     private TTransport transport;
     private Service.Client client;
@@ -30,6 +36,9 @@ public class ViteClient {
         }
     }
 
+    /**
+     * Pings the server if possible
+     */
     public void pingServer() {
         try {
             client.ping();
@@ -39,6 +48,9 @@ public class ViteClient {
     }
 
     @PreDestroy
+    /**
+     * Closes the client if it is open when spring boot closes
+     */
     private void close() {
         if (transport.isOpen()) {
             close();
