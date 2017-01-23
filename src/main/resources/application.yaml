@@ -6,6 +6,11 @@ logging:
     org.eclipse.jetty: 'warn'
     org.jose4j: 'warn'
     org.springframework: 'warn'
+    org.apache: 'warn'
+    o.h.v.internal.xml: 'warn'
+    org.jboss.loggin: 'warn'
+    o.h.v.internal.engine: 'warn'
+    o.h.v.i.e.r: 'warn'
 
 spring:
   main:

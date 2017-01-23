@@ -3,13 +3,13 @@ package com.vite.service;
 import org.junit.Test;
 
 
-public class ViteServiceTest {
+public class ViteHandlerTest {
     /**
-     * Tests the {@link ViteService#ping()} function
+     * Tests the {@link ViteHandler#ping()} function
      */
     @Test
     public void testPing() {
-        ViteService viteService = new ViteService();
+        ViteHandler viteService = new ViteHandler();
         viteService.ping();
     }
 }
