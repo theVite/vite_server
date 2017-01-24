@@ -12,7 +12,6 @@ buildscript {
     }
 }
 
-
 /*
 =========================================================
 Apply plugins
@@ -21,6 +20,15 @@ Apply plugins
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'org.springframework.boot'
+
+/*
+=========================================================
+Repo Info
+=========================================================
+*/
+group = 'com.vite'
+description = "Vite backend server"
+
 
 /*
 =========================================================
@@ -99,13 +107,17 @@ docBundle.dependsOn docs
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
 
 dependencies {
     compile(group: 'org.springframework.boot', name: 'spring-boot-starter-web')
     compile(group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.7')
     compile(group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.7')
+    compile(group: 'com.vite', name: 'vite-server-api', version: '0.0.0-SNAPSHOT')
+
+    testCompile(group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3')
+    testCompile(group: 'org.hamcrest', name: 'hamcrest-library', version: '1.3')
+    testCompile(group: 'junit', name: 'junit', version: '4.12')
+    testCompile(group: 'org.mockito', name: 'mockito-core', version: '1.8.5')
 }
