@@ -1,0 +1,13 @@
+:authenticated:
+
+- find by username
+  + username
+
+  -> success
+     + list of matching users
+
+- find by userdata
+  + user data
+
+  -> success
+     + list of matching users

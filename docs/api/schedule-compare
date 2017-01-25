@@ -1,0 +1,29 @@
+:authenticated:
+
+- find available time with users in time range
+  + list of users
+  + min number of available users
+  + time range
+
+  -> success
+     + list of time periods where at least `min` users are available
+  -> fail
+
+- find available time in group
+  + group
+  + min number of available users
+  + time range
+  
+  -> success
+     + list of time periods where at least `min` users are available
+  -> fail
+
+- find good time for users in time range
+  + list of required users
+  + list of extra users
+  + time range
+
+  -> success
+     + ordered list of time periods by number of required users available then by number of extra users available
+  -> fail
+  
