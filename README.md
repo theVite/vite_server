@@ -20,7 +20,7 @@ This section contains information on setting up and running the project locally
 
 This section details information on contributing quality code to the repo
 
-- All code must adhere to the [style guide](STYLE.md)
+- All code must adhere to the [style guide](https://github.com/theVite/vite_server/blob/master/STYLE.md)
 - All code should be unit tested whenever possible. The goal is to have 70% code coverage repo wide. Test examples can be found in the [style guide](STYLE.md)
 - All code must be submitted to code review by making a PR to the [vite_server repo](https://github.com:theVite/vite_server.git)
 - All code must be pass quality assurance passes in order to be merged
